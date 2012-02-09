@@ -44,7 +44,7 @@
 				initStroke: {
 					width: 10,
 					color: '007FFF',  // solid black
-					opacity: 0.9
+					opacity: 0.8
 				},
 				initOpacity: 1,
 				imgPath: 'images/',

@@ -705,9 +705,9 @@ span.zoom_tool {
 	border-bottom: 1px solid #808080;
 	background-color: #E8E8E8;
 	cursor: pointer;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
 }
 
 #svg_editor #main_menu li#tool_open, #svg_editor #main_menu li#tool_import {
@@ -1417,3 +1417,9 @@ span.zoom_tool {
 .contextMenu LI.delete A { background-image: url(images/page_white_delete.png); }
 .contextMenu LI.quit A { background-image: url(images/door.png); }
 */
+
+#copyright, #tool_wireframe, li#tool_clear, li#tool_open, li#tool_export, #tool_docprops, #tool_angle, #tool_blur, #tool_position, #marker_panel, #idLabel, li#tool_import
+{
+            display: none;
+}
+

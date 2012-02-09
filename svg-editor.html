@@ -79,31 +79,6 @@
 </div>
 </div>
 
-<div id="sidepanels">
-	<div id="layerpanel">
-		<h3 id="layersLabel">Layers</h3>
-		<fieldset id="layerbuttons">
-			<div id="layer_new" class="layer_button"  title="New Layer"></div>
-			<div id="layer_delete" class="layer_button"  title="Delete Layer"></div>
-			<div id="layer_rename" class="layer_button"  title="Rename Layer"></div>
-			<div id="layer_up" class="layer_button"  title="Move Layer Up"></div>
-			<div id="layer_down" class="layer_button"  title="Move Layer Down"></div>
-			<div id="layer_moreopts" class="layer_button"  title="More Options"></div>
-		</fieldset>
-		
-		<table id="layerlist">
-			<tr class="layer">
-				<td class="layervis"></td>
-				<td class="layername">Layer 1</td>
-			</tr>
-		</table>
-		<span id="selLayerLabel">Move elements to:</span>
-		<select id="selLayerNames" title="Move selected elements to a different layer" disabled="disabled">
-			<option selected="selected" value="layer1">Layer 1</option>
-		</select>
-	</div>
-</div>
-
 <div id="main_button">
 	<div id="main_icon" class="buttonup" title="Main Menu">
 		<span></span>
@@ -259,23 +234,6 @@
 
 	</div>
 
-	<div id="rect_panel">
-		<div class="toolset">
-			<label id="rect_width_tool" title="Change rectangle width">
-				<span id="rwidthLabel" class="icon_label"></span>
-				<input id="rect_width" class="attr_changer" size="3" data-attr="width"/>
-			</label>
-			<label id="rect_height_tool" title="Change rectangle height">
-				<span id="rheightLabel" class="icon_label"></span>
-				<input id="rect_height" class="attr_changer" size="3" data-attr="height"/>
-			</label>
-		</div>
-		<label id="cornerRadiusLabel" title="Change Rectangle Corner Radius" class="toolset">
-			<span class="icon_label"></span>
-			<input id="rect_rx" size="3" value="0" type="text" data-attr="Corner Radius"/>
-		</label>
-	</div>
-
 	<div id="image_panel">
 	<div class="toolset">
 		<label><span id="iwidthLabel" class="icon_label"></span>
@@ -295,6 +253,24 @@
 		</label>
 	</div>
   </div>
+
+	<!--div id="rect_panel">
+		<div class="toolset">
+			<label id="rect_width_tool" title="Change rectangle width">
+				<span id="rwidthLabel" class="icon_label"></span>
+				<input id="rect_width" class="attr_changer" size="3" data-attr="width"/>
+			</label>
+			<label id="rect_height_tool" title="Change rectangle height">
+				<span id="rheightLabel" class="icon_label"></span>
+				<input id="rect_height" class="attr_changer" size="3" data-attr="height"/>
+			</label>
+		</div>
+		<label id="cornerRadiusLabel" title="Change Rectangle Corner Radius" class="toolset">
+			<span class="icon_label"></span>
+			<input id="rect_rx" size="3" value="0" type="text" data-attr="Corner Radius"/>
+		</label>
+	</div>
+
 
 	<div id="circle_panel">
 		<div class="toolset">
@@ -348,7 +324,7 @@
 			<input id="line_y2" class="attr_changer" title="Change line's ending y coordinate" size="3" data-attr="y2"/>
 			</label>
 		</div>
-	</div>
+	</div-->
 
 	<div id="text_panel">
 		<div class="toolset">
@@ -562,9 +538,6 @@
 
 	</div>
 
-	<div id="tools_bottom_3">
-		<div id="palette_holder"><div id="palette" title="Click to change fill color, shift-click to change stroke color"></div></div>
-	</div>
 	<div id="copyright"><span id="copyrightLabel">Powered by</span> <a href="http://svg-edit.googlecode.com/" target="_blank">SVG-edit v2.6-alpha</a></div>
 </div>
 
