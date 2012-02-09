@@ -36,15 +36,15 @@
 			
 			curConfig = {
 				canvas_expansion: 3,
-				dimensions: [640,480],
+				dimensions: [2000,2000],
 				initFill: {
 					color: 'none',  // solid red
 					opacity: 1
 				},
 				initStroke: {
-					width: 5,
-					color: '000000',  // solid black
-					opacity: 1
+					width: 10,
+					color: '007FFF',  // solid black
+					opacity: 0.9
 				},
 				initOpacity: 1,
 				imgPath: 'images/',
