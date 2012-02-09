@@ -38,12 +38,12 @@
 				canvas_expansion: 1,
 				dimensions: [4000,4000],
 				initFill: {
-					color: 'none',  // solid red
+					color: 'none',  // transparent innards
 					opacity: 1
 				},
 				initStroke: {
 					width: 10,
-					color: '007FFF',  // solid black
+					color: '007FFF',  
 					opacity: 0.8
 				},
 				initOpacity: 1,
