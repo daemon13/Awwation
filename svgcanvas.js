@@ -205,9 +205,12 @@ var current_zoom = 1;
 var current_group = null;
 
 // Object containing data for the currently selected styles
+if (curConfig.initFill.color != "none") goodcolor = "#" + curConfig.initFill.color; // added line
+else goodcolor = curConfig.initFill.color; // added line
+
 var all_properties = {
 	shape: {
-		fill: "#" + curConfig.initFill.color,
+		fill: goodcolor,
 		fill_paint: null,
 		fill_opacity: curConfig.initFill.opacity,
 		stroke: "#" + curConfig.initStroke.color,
