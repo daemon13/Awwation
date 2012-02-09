@@ -35,8 +35,8 @@
 			// changed in the UI and are stored in the browser, config can not
 			
 			curConfig = {
-				canvas_expansion: 3,
-				dimensions: [2000,2000],
+				canvas_expansion: 1,
+				dimensions: [4000,4000],
 				initFill: {
 					color: 'none',  // solid red
 					opacity: 1
