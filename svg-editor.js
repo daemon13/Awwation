@@ -36,7 +36,7 @@
 			
 			curConfig = {
 				canvas_expansion: 1,
-				dimensions: [4000,4000],
+				dimensions: [640,480],
 				initFill: {
 					color: 'none',  // transparent innards
 					opacity: 1

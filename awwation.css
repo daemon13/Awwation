@@ -2,4 +2,52 @@ body {
     background: #FFFAFF;
 }
 
+html, body, div {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+    -webkit-user-drag: text;
+}
+
+#browser-not-supported {
+    font-size: 0.8em;
+    font-family: Verdana, Helvetica, Arial;
+    color: #000000;
+}
+
+#svg_editor * {
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+
+#svg_editor hr {
+    border: none;
+    border-bottom: 1px solid #808080;
+}
+
+#svg_editor select {
+    margin-top: 4px;
+}
+
+#svg_editor #svgroot {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#svg_editor #svgcanvas {
+    line-height: normal;
+    display: inline-block;
+    background-color: #A0A0A0;
+    text-align: center;
+    vertical-align: middle;
+    width: 640px;
+    height: 480px;
+}
 
