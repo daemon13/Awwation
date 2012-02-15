@@ -9,6 +9,7 @@
     <link rel = stylesheet href = "jgraduate/css/jPicker.css" type = "text/css"/>
     <link rel = stylesheet href = "jgraduate/css/jgraduate.css" type = "text/css"/>
     <link rel = stylesheet href = "bootstrap.css" type = "text/css"/>
+    <link rel = stylesheet href = "awwation.css" type = "text/css"/>
     <link rel = stylesheet href = "spinbtn/JQuerySpinBtn.css" type = "text/css"/>
     
     <!-- js --> 
@@ -43,10 +44,22 @@
 
 <body>
     <div id = "svg_editor">
-
+    
+    <!-- rulers -->
     <div id = "rulers">
         <div id = "ruler_corner"></div>
         <div id = "ruler_x">
-            <div>
-                <canvas height = "15"></canvas>
+            <div><canvas height = "15"></canvas></div>
+        </div>
+        <div id = "ruler_y">
+            <div><canvas width = "15"></canvas></div>
+        </div>
+    </div>
     
+    <div id = "workarea">
+        <div id = "svgcanvas" style = "position: relative">
+        </div>
+    </div>
+
+</body>
+</html
