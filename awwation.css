@@ -2,6 +2,11 @@ body {
     background: #FFFAFF;
 }
 
+.bodyColor {
+    background: #FFFAFF;
+    color: rgba(0,0,0,0.7);
+}
+
 html, body, div {
     -webkit-user-select: text;
     -khtml-user-select: text;
