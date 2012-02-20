@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- favicon -->
+    <link rel = "icon" type = "image/png" href = ""/>
+
+    <!-- css -->
+    <link rel = stylesheet href = "jgraduate/css/jPicker.css" type = "text/css"/>
+    <link rel = stylesheet href = "jgraduate/css/jgraduate.css" type = "text/css"/>
+    <link rel = stylesheet href = "bootstrap.css" type = "text/css"/>
+    <link rel = stylesheet href = "awwation.css" type = "text/css"/>
+    <link rel = stylesheet href = "spinbtn/JQuerySpinBtn.css" type = "text/css"/>
+    
+    <!-- js --> 
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="js-hotkeys/jquery.hotkeys.min.js"></script>
+    <script type="text/javascript" src="jquerybbq/jquery.bbq.min.js"></script>
+    <script type="text/javascript" src="svgicons/jquery.svgicons.js"></script>
+    <script type="text/javascript" src="jgraduate/jquery.jgraduate.min.js"></script>
+    <script type="text/javascript" src="spinbtn/JQuerySpinBtn.min.js"></script>
+    <script type="text/javascript" src="contextmenu/jquery.contextMenu.min.js"></script>
+    <script type="text/javascript" src="browser.js"></script>
+    <script type="text/javascript" src="svgtransformlist.js"></script>
+    <script type="text/javascript" src="math.js"></script>
+    <script type="text/javascript" src="units.js"></script>
+    <script type="text/javascript" src="svgutils.js"></script>
+    <script type="text/javascript" src="sanitize.js"></script>
+    <script type="text/javascript" src="history.js"></script>
+    <script type="text/javascript" src="select.js"></script>
+    <script type="text/javascript" src="draw.js"></script>
+    <script type="text/javascript" src="path.js"></script>
+    <script type="text/javascript" src="svgcanvas.js"></script>
+    <script type="text/javascript" src="svg-editor.js"></script>
+    <script type="text/javascript" src="locale/locale.js"></script>
+    <!--{endif}-->
+
+    <!-- always minified scripts -->
+    <script type="text/javascript" src="jquery-ui/jquery-ui-1.8.custom.min.js"></script>
+    <script type="text/javascript" src="jgraduate/jpicker.min.js"></script>
+    
+    <title>Awwation</title>
+</head>
+
+<body>
+    <div id = "svg_editor">
+    
+    <div id = "workarea">
+        <style id="styleoverrides" media="screen" scoped="scoped"> </style>
+        <div id="svgcanvas" class='canvasColor' style="position:relative"> </div>
+    </div>
+    
+    <div id = "sidepanels" class = "bodyColor" style = "bottom: 154px;">
+
+            <fieldset class='right-fieldset'>
+                <legend>Color</legend>
+                <div id="palette" title="Click to change fill color, shift-click to change stroke color">
+
+                </div>
+                
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="width: 33%;">    
+                                <div class="color_tool tool_button toolFillStyle" id="tool_fill">
+                                    <div class="color_block" style="display:none;">
+                                        <div id="fill_bg"> </div>
+                                        <div id="fill_color" class="color_block"> </div>
+
+                                    </div>
+                                    <label class="icon_label " title="Change fill color"> </label>
+                                </div>
+                            </td>
+                            <td style="width: 33%;">
+                                <div class="color_tool tool_button toolStrokeStyle" id="tool_stroke">
+                            
+                                    <div class="color_block" style="display:none;">
+                                        <div id="stroke_bg"> </div>
+
+                                        <div id="stroke_color" class="color_block"  title="Change stroke color"> </div>
+                                    </div>
+                                    <label class="icon_label " title="Change stroke color"> </label>
+                                </div>
+                            </td>
+                            <td style="width: 33%;">            
+                                <input style="width: 38px;" id="group_opacity" min="0" max="100" step="5" type="number" value="100" data-attr="opacity"/>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="width: 33%; text-align:center;"> 
+                                Fill
+                            </td>
+                            <td style="width: 33%; text-align:center;">
+                                Stroke
+                            </td>
+                            <td style="width: 33%; text-align:center;">         
+                                Opacity
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+                        
+            <fieldset class='right-fieldset'>
+                <legend class='clickable' id='strokeFieldset'>Stroke</legend>
+                <div id='feildDiv2'>
+                    <div class="inline">
+
+                        Width
+                        <label>
+                            <input id="stroke_width" title="Change stroke width by 1, shift-click to change by 0.1" min="0" max="999" type="number" class="attr_changer" data-attr="stroke-width"/>
+                        </label>
+                    </div>
+                    <div class="inline">
+                        Pattern
+                        <label class="stroke_tool">
+                            <select id="stroke_style" title="Change stroke dash style" class="attr_changer" data-attr="stroke_style">
+                                <option selected="selected" value="none">---</option>
+
+                                <option value="2,2"         >..........</option>
+                                <option value="5,5"         >- - - - - </option>
+                                <option value="5,2,2,2"     >- . - . - </option>
+                                <option value="5,2,2,2,2,2" >- .. - .. </option>
+                            </select>
+                        </label>    
+                    </div>
+
+                    
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>                            
+                                    Line join
+                                </td>
+                                <td>                            
+                                    <div id="cur_linejoin" title="Linejoin: Miter"> </div>
+                                </td>
+                                <td>            
+                                    <div style="float: left">
+
+                                        <div class="stroke_tool dropdown" id="stroke_linejoin"  style="display:inline;">
+                                            <button> </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                            
+                                    Line cap
+                                </td>
+
+                                <td>
+                                    <div id="cur_linecap" title="Linecap: Butt"> </div>
+                                </td>
+                                <td>            
+                                    <div style="float: left">
+                                        <div class="stroke_tool dropdown" id="stroke_linecap">
+                                            
+                                            <button> </button>
+                                        </div>              
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>        </div>
+            </fieldset>
+
+            <fieldset class='right-fieldset' id='layer_fieldset'>
+                <legend class='clickable' id='layersFieldset'>Layers</legend>
+
+                <div id='feildDiv3'>
+                    <fieldset id="layerbuttons">
+                        <div id="layer_new" class="layer_button"  title="New Layer"> </div>
+                        <div id="layer_delete" class="layer_button"  title="Delete Layer"> </div>
+                        <div id="layer_rename" class="layer_button"  title="Rename Layer"> </div>
+                        <div id="layer_up" class="layer_button"  title="Move Layer Up"> </div>
+                        <div id="layer_down" class="layer_button"  title="Move Layer Down"> </div>
+
+                        <div id="layer_moreopts" class="layer_button"  title="More Options"> </div>
+                    </fieldset>
+                    
+                    <table id="layerlist">
+                        <tr class="layer">
+                            <td class="layervis"> </td>
+                            <td class="layername">Layer 1</td>
+                        </tr>
+
+                    </table>
+                    <span id="selLayerLabel">Move elements to:</span>
+                    <select id="selLayerNames" title="Move selected elements to a different layer" disabled="disabled">
+                        <option selected="selected" value="layer1">Layer 1</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset id='object_properties_fieldset' class='right-fieldset'>
+                <legend class='clickable' id='propertiesLable'>All Properties</legend>
+                <div id='feildDiv4'>
+                    No single object selected
+                </div>
+            </fieldset>
+    
+    </div>
+
+    <div id = "main_button">
+    </div>
+
+    <div id = "tools_top" class = "tools_panel bodyColor">
+    </div>
+
+    <div id = "zoom_panel_outer" class = "canvasColor">
+    </div>
+
+    <div id = "tools_left" class = "canvasColor">
+    </div>
+
+    </div>
+
+</body>
+</html>

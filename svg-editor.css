@@ -76,6 +76,7 @@ html, body, div{
 	background: #DDD;
 	z-index: 1;
 	overflow: hidden;
+    display: none;
 }
 
 #ruler_corner {
@@ -1418,7 +1419,11 @@ span.zoom_tool {
 .contextMenu LI.quit A { background-image: url(images/door.png); }
 */
 
-#copyright, #tool_wireframe, li#tool_clear, li#tool_open, li#tool_export, #tool_docprops, #tool_angle, #tool_blur, #tool_position, #marker_panel, #idLabel, li#tool_import
+#tool_position, #xy_panel>label {
+    display: none;
+}
+
+#copyright, #tool_wireframe, li#tool_clear, li#tool_open, li#tool_export, #tool_docprops, #tool_angle, #tool_blur, #marker_panel, #idLabel, li#tool_import
 {
             display: none;
 }
