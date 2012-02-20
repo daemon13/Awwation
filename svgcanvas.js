@@ -3460,7 +3460,6 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 //	$(window).mouseup(mouseUp);
 	
 	$(container).bind("mousewheel DOMMouseScroll", function(e){
-
 		e.preventDefault();
 
 		root_sctm = svgcontent.getScreenCTM().inverse();
@@ -3479,7 +3478,6 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 				bbox.factor = 1.1;
 			} else if (e.wheelDelta <= -120) {
 				bbox.factor = 1/1.1;
-                alert(bbox.factor);
 			}
 		} else if(e.detail) {
 			if (e.detail > 0) {
