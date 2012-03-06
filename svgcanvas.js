@@ -268,7 +268,7 @@ var addSvgElementFromJson = this.addSvgElementFromJson = function(data) {
 		svgedit.utilities.assignAttributes(shape, {
 			"fill": cur_shape.fill,
 			"stroke": cur_shape.stroke,
-			"stroke-width": cur_shape.stroke_width,
+			"stroke-width": cur_shape.stroke_width / svgCanvas.getZoom(),
 			"stroke-dasharray": cur_shape.stroke_dasharray,
 			"stroke-linejoin": cur_shape.stroke_linejoin,
 			"stroke-linecap": cur_shape.stroke_linecap,
@@ -2651,7 +2651,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"id": getNextId(),
 						"fill": cur_text.fill,
 						"stroke-width": cur_text.stroke_width,
-						"font-size": cur_text.font_size,
+						"font-size": cur_text.font_size / svgCanvas.getZoom(),
 						"font-family": cur_text.font_family,
 						"text-anchor": "middle",
 						"xml:space": "preserve",
