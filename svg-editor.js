@@ -58,7 +58,7 @@
 				gridSnapping: false,
 				baseUnit: 'px',
 				snappingStep: 10,
-				showRulers: true
+				showRulers: false
 			},
 			uiStrings = Editor.uiStrings = {
 				common: {
@@ -2020,6 +2020,37 @@
 						return false;
 					}
 				});
+
+                $("#svgcanvas").bind("mousewheel DOMMouseScroll", function(e) {
+                    e.preventDefault();
+                    var factor;
+
+        	    	if(e.wheelDelta) {
+		    	        if (e.wheelDelta >= 120) {
+    	        			factor = 1.1;
+        	    		} else if (e.wheelDelta <= -120) {
+		            		factor = 1/1.1;
+            			}
+            		} else if(e.detail) {
+	            		if (e.detail > 0) {
+            				factor = 1/1.1;
+    	        		} else if (e.detail < 0) {
+            				factor = 1.1;			
+    		        	}				
+            		}
+                    var nz = svgCanvas.getZoom() * factor;
+ 
+				    var w_area = workarea;
+                    zoomChanged(window, {
+	    				width: 0,
+    					height: 0,
+				    	// center pt of scroll position
+			    		x: (w_area[0].scrollLeft + w_area.width()/2)/nz, 
+		    			y: (w_area[0].scrollTop + w_area.height()/2)/nz,
+	    				zoom: nz
+                    }, true);
+
+                });
 				
 				$(window).mouseup(function() {
 					panning = false;

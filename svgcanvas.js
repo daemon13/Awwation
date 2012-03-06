@@ -2622,6 +2622,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"cy": y,
 						"r": 0,
 						"id": getNextId(),
+                        "fill": "none",
 						"opacity": cur_shape.opacity / 2
 					}
 				});
@@ -2637,6 +2638,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"rx": 0,
 						"ry": 0,
 						"id": getNextId(),
+                        "fill": "none",
 						"opacity": cur_shape.opacity / 2
 					}
 				});
@@ -2651,8 +2653,8 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"y": y,
 						"id": getNextId(),
 						"fill": cur_text.fill,
-						"stroke-width": cur_text.stroke_width,
-						"font-size": cur_text.font_size / Math.sqrt(svgCanvas.getZoom()),
+						"stroke-width": cur_text.stroke_width * svgCanvas.getZoom(),
+						"font-size": cur_text.font_size / (svgCanvas.getZoom()),
 						"font-family": cur_text.font_family,
 						"text-anchor": "middle",
 						"xml:space": "preserve",
@@ -3459,9 +3461,10 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 	// TODO(codedread): Figure out why after the Closure compiler, the window mouseup is ignored.
 	$(container).mousedown(mouseDown).mousemove(mouseMove).click(handleLinkInCanvas).dblclick(dblClick).mouseup(mouseUp);
 //	$(window).mouseup(mouseUp);
-	
+/*	
 	$(container).bind("mousewheel DOMMouseScroll", function(e){
 		e.preventDefault();
+        
 
 		root_sctm = svgcontent.getScreenCTM().inverse();
 		var pt = transformPoint( e.pageX, e.pageY, root_sctm );
@@ -3475,25 +3478,29 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 
 		// Respond to mouse wheel in IE/Webkit/Opera.
 		// (It returns up/dn motion in multiples of 120)
+        var factor;
 		if(e.wheelDelta) {
 			if (e.wheelDelta >= 120) {
-				bbox.factor = 1.1;
+				factor = 1.1;
 			} else if (e.wheelDelta <= -120) {
-				bbox.factor = 1/1.1;
+				factor = 1/1.1;
 			}
 		} else if(e.detail) {
 			if (e.detail > 0) {
-				bbox.factor = 1/1.1;
+				factor = 1/1.1;
 			} else if (e.detail < 0) {
-				bbox.factor = 1.1;			
+				factor = 1.1;			
 			}				
 		}
-		
+
+
 		if(!bbox.factor) return;
 		call("zoomed", bbox);
+        
 	});
-	
+*/	
 }());
+
 
 // Function: preventClickDefault
 // Prevents default browser click behaviour on the given element
