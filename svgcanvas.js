@@ -210,7 +210,7 @@ else goodcolor = curConfig.initFill.color; // added line
 
 var all_properties = {
 	shape: {
-		fill: goodcolor,
+		fill: "#none",
 		fill_paint: null,
 		fill_opacity: curConfig.initFill.opacity,
 		stroke: "#" + curConfig.initStroke.color,
@@ -2583,6 +2583,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"width": 0,
 						"height": 0,
 						"id": getNextId(),
+                        "fill": "none",
 						"opacity": cur_shape.opacity / 2
 					}
 				});
@@ -2600,7 +2601,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"y2": y,
 						"id": getNextId(),
 						"stroke": cur_shape.stroke,
-						"stroke-width": stroke_w,
+						"stroke-width": stroke_w / svgCanvas.getZoom(),
 						"stroke-dasharray": cur_shape.stroke_dasharray,
 						"stroke-linejoin": cur_shape.stroke_linejoin,
 						"stroke-linecap": cur_shape.stroke_linecap,
@@ -2650,7 +2651,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 						"y": y,
 						"id": getNextId(),
 						"fill": cur_text.fill,
-						"stroke-width": cur_text.stroke_width,
+						"stroke-width": cur_text.stroke_width / svgCanvas.getZoom(),
 						"font-size": cur_text.font_size / svgCanvas.getZoom(),
 						"font-family": cur_text.font_family,
 						"text-anchor": "middle",
@@ -3464,6 +3465,7 @@ var getMouseTarget = this.getMouseTarget = function(evt) {
 
 		root_sctm = svgcontent.getScreenCTM().inverse();
 		var pt = transformPoint( e.pageX, e.pageY, root_sctm );
+
 		var bbox = {
 			'x': pt.x,
 			'y': pt.y,
