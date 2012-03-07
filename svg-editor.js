@@ -2655,8 +2655,8 @@
 				if(window.canvg) {
 					svgCanvas.rasterExport();
 				} else {
-					$.getScript('canvg/rgbcolor.js', function() {
-						$.getScript('canvg/canvg.js', function() {
+					$.getScript('canvg/rgbcolor.new.js', function() {
+						$.getScript('canvg/canvg.new.js', function() {
 							svgCanvas.rasterExport();
 						});
 					});
