@@ -7,18 +7,18 @@
  *
  */
  
-/* 
-	This is a very basic SVG-Edit extension. It adds a "Hello World" button in
-	the left panel. Clicking on the button, and then the canvas will show the
- 	user the point on the canvas that was clicked on.
-*/
- 
 svgEditor.addExtension("Slides", function() {
     var currentSelection;
     
     var count = 0;
     
-    var strip = $("<div id = 'sortable' style = 'background-color: grey; float: left; height: 50px; width: 700px; padding: 0.5em;'> </div> ");
+    var strip = $("<div id = 'sortable'></div>");
+    strip.css({
+        'background-color': 'grey',
+        'float': 'left',
+        'height': '56px',
+        'width': '700px',
+    });
     strip.appendTo($("#tools_top")); 
     strip.sortable({ revert: true });
 
@@ -26,7 +26,9 @@ svgEditor.addExtension("Slides", function() {
     generateButton.appendTo($("#tools_top"));
     
     generateButton.click(function() {
-        console.log(strip.sortable('toArray'));
+        var sequence = strip.sortable('toArray');
+        console.log(sequence);
+        makePresentation(sequence);
     });
 
 		return {
@@ -100,7 +102,7 @@ svgEditor.addExtension("Slides", function() {
                             el.parentNode.parentNode.removeChild(el.parentNode);
                         }
 
-                        $("<span onclick = removeElement(this)>X</span>").appendTo(thumbDiv);
+                        $("<span onclick = removeElement(this)><a href = '#'>delete</a></span>").appendTo(thumbDiv);
                         
 					}
 
