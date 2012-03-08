@@ -65,5 +65,5 @@ makePresentation = function(sequence) {
     var bb = new BlobBuilder();
     bb.append((new XMLSerializer()).serializeToString(doc));
     var blob = bb.getBlob("application/svg+xml;");
-    saveAs(blob, "aww.html");
+    saveAs(blob, "aww.svg");
 }
