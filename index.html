@@ -1,80 +1,73 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Awwation: Prezi clone in HTML5</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Create zooming presentations in HTML5">
+        <meta name="author" content="Aditya Bhatt">
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Molengo&v1);
+            body,td,th {
+                font-family: Molengo, Myriad Pro, Myriad Pro Cond, Myriad Pro Light, Garamond, serif;
+                background-color: #F8F8F8;
+            }
 
-  <title>Awwation - Prezi clone in HTML5</title>
+            #main {
+                text-align: center;
+            }
+            h1 {
+                font-size: 36pt;
+                padding: 0px;
+                margin: 0px;
+                font-weight: normal;
+            }
+            h2 {
+                font-size: 14pt;
+                font-weight: normal;
+            }
+            a {
+                        color: #CC0000;
+                        text-decoration: none;
+            }
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #ffffff;
-      font-family: Helvetica, Arial, FreeSans, serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #040506; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #040506; }
-    h3 { text-align: center; color: #040506; }
-    a { color: #040506; }
-    .description { text-align: center; font-size: 1.2em; margin-bottom: 30px; margin-top: 30px;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+            iframe {
+                background-color: white;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10pxi;
+                border: solid 1px black;
+                -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.7);
+                -moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.7);
+                box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.7);
+            }
+            
+            #container {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
 
-<body onload = "document.getElementById('presentation').focus()">
-  <a href="https://github.com/adityab/Awwation"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+        </style>
+    </head>
 
-  <div id="container">
-
-
-    <h1><a href="https://github.com/adityab/Awwation">Awwation</a>
-      <span class="small">by <a href="https://github.com/adityab">adityab</a></span></h1>
-
-    <div class="description">
-     A Prezi clone in HTML5, Js, and SVG.
-    </div>
-
-    <center>
-        <iframe id = 'presentation' width = "500px" height = "350px" src = "http://dl.dropbox.com/u/40496552/awwation-intro.svg"></iframe>
-        <br/>
-        <p>Navigate with arrow keys.</p>
-        <a href = "http://dl.dropbox.com/u/40496552/awwation-intro.svg" target = "_blank">See it fullscreen!</a>
-    </center>
-
-    
-
-      <p><strong>Awwation</strong> is a presentation creator inspired by Prezi</p>
-    <p>It runs entirely in the browser, purely <strong>client-side</strong>, and generates <strong>SVG</strong> presentations. Presentation files are created client-side using an <a href= "https://github.com/eligrey/FileSaver.js">implementation</a> of the new <strong>FileSaver API</strong>, with no server-side crunching required.</p>
-<p>Once the presentation sequence is defined in the editor, it generates an array of SVG element ID's belonging to the path nodes, so you can easily take that sequence and pass it to an animation backend like <a href = "http://sozi.baierouge.fr/wiki/en:welcome">Sozi</a>, <a href = "http://dizzy.metafnord.org">dizzy.js</a>, or <a href = "http://bartaz.github.com/impress.js/">impress.js</a>.<br/>
-Currently, only the Sozi backend is implemented.</p>
-<p>As of right now, the editor is a very badly hacked modification of SVG-edit, and there may be minor glitches in drawing or the UI. This will be fixed soon - I have coursework to finish!</p>
-<p><a href = "http://adityab.github.com/Awwation/svg-editor.html"><strong>Try it!</strong></a> You can zoom the editor using the mousewheel and pan it around by pressing <em>space</em> and dragging.</p>
-    
-
-    
-
-      <center><p>Awwation is a holiday project made by <a href = "http://adityabhatt.org"><strong>Aditya Bhatt</strong></a>, an about-to graduate undergrad student, looking for a good job. Contact me at <a href ="mailto:aditya@adityabhatt.org">aditya@adityabhatt.org</a>.<br/>      </center>
-    
-
-  </div>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-29830133-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
+    <body onload = "document.getElementById('presentation').focus();">
+        <a href="http://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/edc6dae7a1079163caf7f17c60495bbb6d027c93/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a>
+        <div id = "main">
+            <h1><a href = ".">Awwation</a></h1>
+            <h2>Create Zooming Prezi-like  HTML5 presentations!</h2>
+        </div>
+        
+        <center>
+            <iframe id = 'presentation' width = "800px" height = "400px" src = "http://dl.dropbox.com/u/40496552/awwation-intro.svg"></iframe>
+            <p>Navigate with ← and → keys.</p>
+            <p><strong>See it in <a href = "http://dl.dropbox.com/u/40496552/awwation-intro.svg">Fullscreen</a>! Or, try the <a href = "http://adityab.github.com/Awwation/svg-editor.html">Editor</a>.</strong></p>
+        </center>
+        
+        <div id = "container">
+            <p><strong>Awwation</strong> is a presentation creator app, inspired by Prezi.</p>
+            <p>It runs entirely in the browser, purely client-side, and generates <strong>SVG</strong> presentations. For now, it works properly only with Google Chrome. Presentation files are created client-side using an <a href = "https://github.com/eligrey/FileSaver.js">implementation</a> of the new <strong>FileSaver API</strong>, with no server-side crunching required.</p>
+            <p>The editor is built on top of the core of <strong><a href = "http://svg-edit.googlecode.com">SVG-edit</a></strong>.</p>
+            <p>Once the presentation sequence is defined in the editor, it generates an array of SVG element ID's belonging to the path nodes, so you can easily take that sequence and pass it to an animation backend like <a href = "http://sozi.baierouge.fr/wiki/en:welcome">Sozi</a>, <a href = "http://dizzy.metafnord.org">dizzy.js</a>, or <a href = "http://bartaz.github.com/impress.js">impress.js</a>. <br>Currently, only the <strong>Sozi</strong> backend is implemented.</p>
+            <p>Awwation is made by <strong><a href = "http://adityabhatt.org">Aditya Bhatt</a></strong>. He can be reached at <a href = "mailto:aditya@adityabhatt.org">aditya@adityabhatt.org</a>.</p>
+    </body>
 </html>
